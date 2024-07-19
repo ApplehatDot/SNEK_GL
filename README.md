@@ -14,7 +14,7 @@ a port dla win32 działa od Windows 98 do Windows 11 (windows XP ma problemy.)
 
 # Lista Wersji na jakich działają porty:
 ## Win32:
-- Windows NT [Brak procedury `EnumDisplayMonitors` w USER32.dll]
+- Windows NT 4.0 [Brak procedury `EnumDisplayMonitors` w USER32.dll]
 - Windows 98
 - Windows 2000
 - Windows XP [działa ale ostro się zawiesza, problemy z grafiką]
