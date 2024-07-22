@@ -17,11 +17,14 @@ a port dla win32 działa od Windows 98 do Windows 11 (windows XP ma problemy.)
 - Windows NT 4.0 [Brak procedury `EnumDisplayMonitors` w USER32.dll]
 - Windows 98
 - Windows 2000
-- Windows XP [działa ale ostro się zawiesza, problemy z grafiką]
+- ~Windows XP~ [działa ale ostro się zawiesza, problemy z grafiką]
 - Windows 7 [x86 i x64] na nim kompilowano wersje win32
 - Windows 8 [x86 i x64]
 - Windows 10 [x86 i x64]
-- Windows 11 
+- Windows 11
+- ReactOS 0.4.14 [x86?]
+<img src="source/images/ReactOS.png">
+
 ## Linux_x86 (i Linux_x64...)
 - Ubuntu 11.04 [x86] na nim kompilowano wersje Linux_x86
 
