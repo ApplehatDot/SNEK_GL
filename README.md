@@ -27,5 +27,5 @@ Win32 release works from Windows 98 to Windows 11, aswell on ReactOS (Windows XP
 
 ## Linux_x86 (and Linux_x64...)
 - Ubuntu 11.04 [x86] on that version the Linux release was compiled in
-- Ubuntu 24.04 [x64] 
+- Ubuntu 22.04.6 [x64] 
 
