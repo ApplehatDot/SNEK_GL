@@ -2,9 +2,7 @@
 SNEK - projekt w języku (czystego) C i OpenGL gry Snake II ze wzoru z Nokii 5110
 
 projekt ma dwa wersje - Linux_x86 i dla Win32, które działają tak samo.
-wersja dla systemów rodziny Linux - działa od ubuntu 11.04 (nie testowałem jeszcze wcześniejszych ani nowszych.)
-
-**Port Linux_x86 używa GTK+ 2.0 i Freeglut 3**
+wersja dla systemów rodziny Linux - działa od ubuntu 11.04 do 24.04
 
 Aby skompilować samemu (co będziesz musiał :) użyj pliku <a href="https://github.com/ApplehatDot/SNEK/blob/main/docs%2FCOMPILE.md">COMPILE.md</a>
 
@@ -29,4 +27,5 @@ a port dla win32 działa od Windows 98 do Windows 11 (windows XP ma problemy.)
 
 ## Linux_x86 (i Linux_x64...)
 - Ubuntu 11.04 [x86] na nim kompilowano wersje Linux_x86
+- Ubuntu 24.04 [x64] 
 
