@@ -5,6 +5,7 @@ projekt ma dwa wersje - Linux_x86 i dla Win32, które działają tak samo.
 wersja dla systemów rodziny Linux - działa od ubuntu 11.04 (nie testowałem jeszcze wcześniejszych ani nowszych.)
 
 **Port Linux_x86 używa GTK+ 2.0 i Freeglut 3**
+
 Aby skompilować samemu (co będziesz musiał :) użyj pliku <a href="https://github.com/ApplehatDot/SNEK/blob/main/docs%2FCOMPILE.md">COMPILE.md</a>
 
 <img src="source/images/ubuntuSNEK.png">
