@@ -1,7 +1,8 @@
 # Kompilacja Gierki SNEK dla systemów win32 
 Kompilowanie SNEK dla systemów Microsoft Windows (win32) wymaga kompilatora MinGW 6.2.0 i edytora kodu (jeśli masz zamiar dopisywać do kodu). Mając pliki z `SNEK/source/win32/`
-
-<img src="image/win32-files.png">
+<div align="center">
+  <img src="image/win32-files.png">
+</div>
 
 zwykle kompilując tworze plik `make.bat` i tam dodaje linijki kompilujące, tak coś w stylu make:
 ```batch
