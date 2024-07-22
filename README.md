@@ -12,7 +12,7 @@ Win32 release works from Windows 98 to Windows 11, aswell on ReactOS (Windows XP
 
 <img src="source/images/windowsSNEK.png">
 
-# Compalibility list of different Versions for:
+# compatibility list of different Versions for:
 ## Win32:
 - Windows NT 4.0 [missing `EnumDisplayMonitors` procedure in USER32.dll]
 - Windows 98
