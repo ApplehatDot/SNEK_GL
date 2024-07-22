@@ -4,7 +4,7 @@
   
   ReactOS 0.4.14
   
-  <img src="image/ReactOS.png">
+  <img src="images/ReactOS.png">
 </div>
 
 ## Linux screenshots
@@ -12,5 +12,5 @@
   
   Ubuntu 22.04.6
   
-  <img src="image/Ubuntu-22.04.6-x64.png">
+  <img src="images/Ubuntu-22.04.6-x64.png">
 </div>
