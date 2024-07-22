@@ -1,4 +1,4 @@
-*kompilacja dla linux jest na dole - albo naciśnij <a href=https://github.com/ApplehatDot/SNEK/edit/main/docs/COMPILE.md#kompilacja-gierki-snek-dla-system%C3%B3w-rodziny-linux>tutaj...</a>*
+*kompilacja dla linux jest na dole - albo naciśnij <a href="https://github.com/ApplehatDot/SNEK/edit/main/docs/COMPILE.md#kompilacja-gierki-snek-dla-system%C3%B3w-rodziny-linux">tutaj...</a>*
 
 # Kompilacja Gierki SNEK dla systemów win32 
 Kompilowanie SNEK dla systemów Microsoft Windows (win32) wymaga kompilatora MinGW 6.2.0 i edytora kodu (jeśli masz zamiar dopisywać do kodu). Mając pliki z `SNEK/source/win32/`
