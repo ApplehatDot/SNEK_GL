@@ -5,9 +5,10 @@
  * (szkoda że Nokii nie mam dla porównania...)
  */
 
-/** Projekt PRYWATNY - na licencji MIT
- KOD NAPISANY PRZEZ J. 'KRECIKA' K.
- ('Applehat' jako pokrywka int. ;) **/
+/** SNEK Projekt - on MIT License
+    CODE WRITTEN BY 'APPLEHAT' (ApplehatDoesStuff)
+ komentarze w Polskim, bo ja - autor polakiem :) i zamieniać nie mam zamiaru.
+**/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -51,8 +52,7 @@ float FoodX;    //bez jedzenia nigdy się nie odbędzie.
 float FoodY;
 bool debugMode = false;
 
-const char* abouttext = "oto napis w dialogu about";
-char MITLicense[] = "SNEK - Snake II dla systemow Microsoft Windows\nProjekt Prywatny, na licencji MIT - Napisany przez J. 'Krecika' K.\nPROJEKT NIE JEST WYSYlANY POD PUBLIKE, PODLEGA NA LICENCJI MIT:\n\nCopyright 2024 ApplehatDoesStuff\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ,,Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED,,AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
+char MITLicense[] = "SNEK - Win32 Release version of SNEK\nCreated by Applehat (ApplehatDoesStuff) - Project is distributed on MIT License:\n\nCopyright 2024 ApplehatDoesStuff\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ,,Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED,,AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
 
 
 
