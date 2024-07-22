@@ -22,7 +22,7 @@ uruchamiając plik `make.bat` skompiluje aplikacje i ją uruchomi -
 
 <img src="image/success-win32.png">
 
-# Kompilacja Gierki SNEK dla systemów rodziny GNU/Linux
+# Kompilacja Gierki SNEK dla systemów rodziny Linux
 ### `NOTE: Kompilacja programu SNEK dla systemów Linux działa dynamicznie, program musi być skompilowany na komputerze, na którym ma być uruchamiany`
 
 wstępnie, żeby skompilować projekt dla systemów Linux trzeba zainstalować biblioteki:
