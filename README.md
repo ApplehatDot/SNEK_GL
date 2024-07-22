@@ -29,3 +29,5 @@ a port dla win32 działa od Windows 98 do Windows 11 (windows XP ma problemy.)
 - Ubuntu 11.04 [x86] na nim kompilowano wersje Linux_x86
 - Ubuntu 22.04.6 [x64]
 
+Galeria screenshotów z danych systemów — <a href="https://github.com/ApplehatDot/SNEK/blob/main/Gallery%2FGallery.md">Gallery/Gallery.md</a>
+
