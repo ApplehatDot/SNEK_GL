@@ -29,3 +29,5 @@ Win32 release works from Windows 98 to Windows 11, aswell on ReactOS (Windows XP
 - Ubuntu 11.04 [x86] on that version the Linux release was compiled in
 - Ubuntu 22.04.6 [x64] 
 
+Screenshot Gallery of each OS — <a href="https://github.com/ApplehatDot/SNEK/blob/main/Gallery%2FGallery.md">Gallery/Gallery.md</a>
+
