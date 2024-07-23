@@ -226,7 +226,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        GTK_MessageBox("Przegrana... a to pech!", "Wykryto kolizje ze ścianą - przegrałeś! ( a to pech :[ )");
+        GTK_MessageBox("Game Over", "Detected wall collision - You lost! ( awh man :[ )");
         exit(0);
     }
 
