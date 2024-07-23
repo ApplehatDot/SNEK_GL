@@ -1,14 +1,18 @@
 /*
  * Program tworzący gierkę "Snake II" z Nokii 5110
  * w OpenGL, dla systemów Windows x86 i x64 :)
- *
- * (szkoda że Nokii nie mam dla porównania...)
  */
 
 /** SNEK Projekt - on MIT License
     CODE WRITTEN BY 'APPLEHAT' (ApplehatDoesStuff)
  komentarze w Polskim, bo ja - autor polakiem :) i zamieniać nie mam zamiaru.
 **/
+
+            /****  LISTA TODO: ****/
+//(* - niegotowe; V - zaimplementowane; T - w trakcie testowania)//
+/** [V] dodaj sekretną opcję użycia config-(nazwa).ini **/
+/** [*] dodaj opcje w pliku config.ini na zmiane rozdzielczości **/
+/** [*] dodaj punktacje (PointCount) do dialogu przegranej **/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -39,10 +43,7 @@
 #define TIMER_SET 350
 #define limit 0.025
 
-        /****  LISTA TODO: ****/
-/** [V] dodaj sekretną opcję użycia config-(nazwa).ini **/
-/** [] dodaj opcje w pliku config.ini na zmiane rozdzielczości **/
-/** [] dodaj punktacje (PointCount) do dialogu przegranej **/
+
 
 int PointCount, LiczbaSegmentow = 1;
 float SegmentWeza[MAX_SEGMENTS][2];
