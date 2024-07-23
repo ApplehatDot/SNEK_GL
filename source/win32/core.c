@@ -244,7 +244,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        MessageBoxA(NULL, "Wykryto kolizje ze sciana - przegrales!", "Przegrana gra... a to pech", MB_OK);
+        MessageBoxA(NULL, "Detected Wall collision - You lost! (awh man :[ )", "Game Over", MB_OK);
         exit(0);
     }
 
