@@ -27,6 +27,15 @@ uruchamiając plik `make.bat` skompiluje aplikacje i ją uruchomi -
 # Kompilacja Gierki SNEK dla systemów rodziny Linux
 #### `NOTE: Kompilacja programu SNEK dla systemów Linux działa dynamicznie, program musi być skompilowany na komputerze, na którym ma być uruchamiany`
 
+### 1. edytowanie ``sources.list`` aby wznowić wsparcie dla starych dystrybucji ubuntu
+jeżeli jesteś jak ja, I chcesz używać Ubuntu 11.04 do kompilacji, aby przeedytować strony z jakich ma pobierać pakiety, użyj komendy:
+```bash
+sudo sed -i -re 's/([a-z]{2}\.)?XX.archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+```
+gdzie ``XX.archive.ubuntu.com`` to XX odpowiada jak w polskiej wersji ``pl.archive.ubuntu.com`` a chcemy kompletnie zamienić na ``old-releases.ubuntu.com`` :)
+
+### 2. kompilacja SNEK
+
 wstępnie, żeby skompilować projekt dla systemów Linux trzeba zainstalować biblioteki:
 ```bash
 sudo apt-get update
