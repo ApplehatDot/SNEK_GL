@@ -57,7 +57,7 @@ float FoodY;
 bool snakeMoved = false;
 bool debugMode = false;
 
-int PointCount = 0
+int PointCount = 0;
 int LiczbaSegmentow = 1;
 int show_xy;
 
