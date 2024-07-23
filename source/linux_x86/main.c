@@ -226,7 +226,7 @@ void Timer(int value) {
     float oldDotY = DotY;
     
     // dodaj ilość PointCount [TODO #1]
-    char buffer[50]
+    char buffer[50];
     sprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
     strcpy(PointCountChar, buffer);
 
