@@ -46,6 +46,7 @@
 int global_argc;
 char **global_argv;
 char PointCountChar[100];
+char buffer[50];
 
 float SegmentWeza[MAX_SEGMENTS][2];
 float DotX = DEFAULT_X, DotY = DEFAULT_Y;
@@ -226,7 +227,6 @@ void Timer(int value) {
     float oldDotY = DotY;
     
     // dodaj ilość PointCount [TODO #1]
-    char buffer[50];
     sprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
     strcpy(PointCountChar, buffer);
 
