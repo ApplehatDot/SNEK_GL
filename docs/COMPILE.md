@@ -41,7 +41,7 @@ wstępnie, żeby skompilować projekt dla systemów Linux trzeba zainstalować b
 sudo apt-get update
 sudo apt-get install libgtk2.0-dev freeglut3 freeglut3-dev libglew-dev libglu1-mesa-dev
 ```
-i w tym kompilator gcc.
+i w tym kompilator gcc - przez `build-essential`
 kiedy pliki już są w folderze, otwórz terminal i wpisz komende:
 ```bash
 $ gcc -o SNEK_linux main.c `pkg-config --cflags --libs gtk+-2.0` -lGL -lGLU -lglut -lm -std=c99
