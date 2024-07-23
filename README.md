@@ -31,6 +31,7 @@ a port dla win32 działa od Windows 98 do Windows 11 (windows XP ma problemy.)
 <img src="source/images/ReactOS.png">
 
 ## Linux_x86 (i Linux_x64...)
+- Ubuntu 7.10 [x86]
 - Ubuntu 11.04 [x86] na nim kompilowano wersje Linux_x86
 - Ubuntu 22.04.6 [x64]
 
