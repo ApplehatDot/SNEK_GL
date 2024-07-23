@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "debugwin.h"
+#include "resource.h"
 
 #define KROKX 0.025
 #define KROKY 0.045
@@ -39,7 +40,9 @@
 #define limit 0.025
 
         /****  LISTA TODO: ****/
-/** [V] TODO: dodaj sekretną opcję użycia config-(nazwa).ini **/
+/** [V] dodaj sekretną opcję użycia config-(nazwa).ini **/
+/** [] dodaj opcje w pliku config.ini na zmiane rozdzielczości **/
+/** [] dodaj punktacje (PointCount) do dialogu przegranej **/
 
 int PointCount, LiczbaSegmentow = 1;
 float SegmentWeza[MAX_SEGMENTS][2];
@@ -51,6 +54,10 @@ float KierunekY = 0.0;   // Początkowy kierunek ruchu w pionie
 float FoodX;    //bez jedzenia nigdy się nie odbędzie.
 float FoodY;
 bool debugMode = false;
+
+//definicja globalnych zmiennych (dla glutInit)
+int global_argc;
+char **global_argv;
 
 char MITLicense[] = "SNEK - Win32 Release version of SNEK\nCreated by Applehat (ApplehatDoesStuff) - Project is distributed under MIT License:\n\nCopyright 2024 ApplehatDoesStuff\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ,,Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED,,AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
 
@@ -316,16 +323,25 @@ void reshape(int w, int h) {
     glutReshapeWindow(336, 192);
 }
 
-int main(int argc, char** argv) {
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    global_argc = __argc;
+    global_argv = __argv;
+    
     srand(time(NULL));  // inicjalizacja generatora liczb losowych
-    glutInit(&argc, argv);
+    glutInit(&__argc, __argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(336, 192);       // w pliku conf-snek.exe będzie opcja zmieniania rozdzielczości.
+    glutInitWindowSize(336, 192);
     glutCreateWindow("SNEK - Snake II dla systemow Windows");
     //nazwa to nie ma jakiegoś znaczenia
 
-     for (int i = 1; i < argc; ++i) {
-        if (strcmp(argv[i], "--debugwin") == 0) {
+    //ustaw ikone z pliku resource.h (DEF_ICON)
+    HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(DEF_ICON));
+    SendMessage(GetActiveWindow(), WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+    SendMessage(GetActiveWindow(), WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
+
+     for (int i = 1; i < global_argc; ++i) {
+        if (strcmp(global_argv[i], "--debugwin") == 0) {
             debugMode = true;
             break;
         }
