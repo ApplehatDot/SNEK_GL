@@ -9,10 +9,10 @@
 **/
 
             /****  LISTA TODO: ****/
-//(* - niegotowe; V - zaimplementowane; T - w trakcie testowania)//
+//(* - niegotowe; V - zaimplementowane; T - w trakcie testowania;)//
 /** [V] dodaj sekretną opcję użycia config-(nazwa).ini **/
 /** [*] dodaj opcje w pliku config.ini na zmiane rozdzielczości **/
-/** [*] dodaj punktacje (PointCount) do dialogu przegranej **/
+/** [T] dodaj punktacje (PointCount) do dialogu przegranej **/
 
 #include <stdio.h>
 #include <stdbool.h>
