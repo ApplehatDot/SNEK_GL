@@ -10,6 +10,11 @@
  */
 /** Port z windowsowego SNEK'a na łono Linuxowe :) **/
 
+/**                 TODO LIST:
+    (* - niegotowe; V - zaimplementowane; T - w trakcie testowania)
+    [*] Zaimplementuj przy dialogu przegranej, ilość punktacji
+**/
+
 #include <gtk/gtk.h>
 #include <GL/glut.h>
 #include <GL/freeglut.h>
