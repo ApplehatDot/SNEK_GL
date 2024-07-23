@@ -12,7 +12,9 @@
 
 /**                 TODO LIST:
     (* - niegotowe; V - zaimplementowane; T - w trakcie testowania)
-    [*] Zaimplementuj przy dialogu przegranej, ilość punktacji
+    [V] Zaimplementuj przy dialogu przegranej, ilość punktacji
+    [*] Dodaj funkcje, która blokuje maksymalizacje okna
+    [*] Dodaj sposób zmiany rozdzielczości okna
 **/
 
 #include <gtk/gtk.h>
@@ -43,6 +45,7 @@
 
 int global_argc;
 char **global_argv;
+char PointCountChar[100];
 
 float SegmentWeza[MAX_SEGMENTS][2];
 float DotX = DEFAULT_X, DotY = DEFAULT_Y;
@@ -54,7 +57,8 @@ float FoodY;
 bool snakeMoved = false;
 bool debugMode = false;
 
-int PointCount, LiczbaSegmentow = 1;
+int PointCount = 0
+int LiczbaSegmentow = 1;
 int show_xy;
 
 char MITLicense[] = "SNEK - Linux Release version of SNEK\nCreated by Applehat ('ApplehatDoesStuff') - Project is distributed under MIT License:\n\nCopyright 2024 ApplehatDoesStuff\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ,,Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED,,AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
@@ -220,6 +224,11 @@ void Kontrol(int key, int x, int y) {
 void Timer(int value) {
     float oldDotX = DotX;
     float oldDotY = DotY;
+    
+    // dodaj ilość PointCount [TODO #1]
+    char buffer[50]
+    sprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
+    strcpy(PointCountChar, buffer);
 
     // Zapisz poprzednią pozycję głowy węża
     float prevX = DotX;
@@ -238,6 +247,7 @@ void Timer(int value) {
     // Sprawdź kolizję z jedzeniem i dodaj nowy segment
     if (fabs(DotX - FoodX) <= limit && fabs(DotY - FoodY) <= limit) {
         DodajSegmentWeza(prevX, prevY);  // Dodaj nowy segment na poprzedniej pozycji głowy
+        PointCount += 100;    // jedno zdobyte jedzenie odpowiada 100 punktom.
         GenerateFood();  // Wygeneruj nowe jedzenie
     }
 
