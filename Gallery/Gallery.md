@@ -4,7 +4,11 @@
   
   ReactOS 0.4.14
   
-  <img src="images/ReactOS.png">
+  <img width=600 src="images/ReactOS.png">
+
+  Windows 7 Ultimate [x64]
+
+  <img width=600 src="images/Windows7-Ultimate-x64.png">
 </div>
 
 ## Linux screenshots
@@ -12,5 +16,5 @@
   
   Ubuntu 22.04.6
   
-  <img src="images/Ubuntu-22.04.6-x64.png">
+  <img width=600 src="images/Ubuntu-22.04.6-x64.png">
 </div>
