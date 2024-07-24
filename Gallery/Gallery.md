@@ -45,6 +45,6 @@
  
   Ubuntu 18.06 LTS [x64; Dualbooted] on Lenovo MIIx 300-10iby
 
-  <img width=600 src="images/Ubuntu-18-06.png">
+  <img width=600 src="images/Ubuntu-18-06.jpg">
 
 </div>
