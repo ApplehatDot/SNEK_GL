@@ -47,4 +47,8 @@
 
   <img width=600 src="images/Ubuntu-18-04.jpg">
 
+  Lubuntu 18.04.5 LTS [x64; Dualbooted] on Lenovo MIIx 300-10iby
+
+  <img width=600 src="images/Lubuntu-18-04.jpg">
+
 </div>
