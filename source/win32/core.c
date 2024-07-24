@@ -236,7 +236,7 @@ void Timer(int value) {
     float oldDotY = DotY;
 
     //Dodaj ilość PointCount [TODO - #3]
-    char buffer[50];    //bufor tymczasowy dla napisu
+    char buffer[100];    //bufor tymczasowy dla napisu
     sprintf(buffer, "Detected Wall Collision! - You Lost!\nPoints scored: %d", PointCount);    //do buforu: komunikat i liczba
     strcpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
