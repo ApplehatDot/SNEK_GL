@@ -46,7 +46,7 @@
 int global_argc;
 char **global_argv;
 char PointCountChar[100];
-char buffer[50];
+char buffer[90];
 
 float SegmentWeza[MAX_SEGMENTS][2];
 float DotX = DEFAULT_X, DotY = DEFAULT_Y;
