@@ -42,4 +42,9 @@
   Ubuntu 22.04.6 [x64]
   
   <img width=600 src="images/Ubuntu-22.04.6-x64.png">
+ 
+  Ubuntu 18.06 LTS [x64; Dualbooted] on Lenovo MIIx 300-10iby
+
+  <img width=600 src="images/Ubuntu-18-06.png>
+
 </div>
