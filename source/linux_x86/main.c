@@ -11,9 +11,9 @@
 /** Port z windowsowego SNEK'a na łono Linuxowe :) **/
 
 /**                 TODO LIST:
-    (* - niegotowe; V - zaimplementowane; T - w trakcie testowania)
+    (* - niegotowe; V - zaimplementowane; T - w trakcie testowania; F - nieudane)
     [V] Zaimplementuj przy dialogu przegranej, ilość punktacji
-    [*] Dodaj funkcje, która blokuje maksymalizacje okna
+    [F] Dodaj funkcje, która blokuje maksymalizacje okna
     [*] Dodaj sposób zmiany rozdzielczości okna
 **/
 
@@ -323,7 +323,6 @@ int main(int argc, char *argv[])
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(336, 192);
-    glutInitWindowPosition(100, 100);
     glutCreateWindow("SNEK - Snake II dla Linux x86");
 
     // Inicjalizacja OpenGL
