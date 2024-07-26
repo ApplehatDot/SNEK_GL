@@ -11,7 +11,7 @@
             /****  LISTA TODO: ****/
 //(* - niegotowe; V - zaimplementowane; T - w trakcie testowania;)//
 /** [V] dodaj sekretną opcję użycia config-(nazwa).ini **/
-/** [*] dodaj opcje w pliku config.ini na zmiane rozdzielczości **/
+/** [v] dodaj opcje w pliku config.ini na zmiane rozdzielczości **/
 /** [V] dodaj punktacje (PointCount) do dialogu przegranej **/
 
 #include <stdio.h>
@@ -44,49 +44,44 @@
 #define limit 0.025
 
 
-
-int PointCount, LiczbaSegmentow = 1;
-float SegmentWeza[MAX_SEGMENTS][2];
-bool snakeMoved = false;
+int global_argc;
+int PointCount = 0;
+int LiczbaSegmentow = 1;
 int show_xy;
+int win_res;
+float SegmentWeza[MAX_SEGMENTS][2];
 float DotX = DEFAULT_X, DotY = DEFAULT_Y;
 float KierunekX = KROKX; // Początkowy kierunek ruchu w poziomie
 float KierunekY = 0.0;   // Początkowy kierunek ruchu w pionie
 float FoodX;    //bez jedzenia nigdy się nie odbędzie.
 float FoodY;
+float Skalacja = 7.0;
 bool debugMode = false;
-
-//definicja globalnych zmiennych (dla glutInit)
-int global_argc;
+bool snakeMoved = false;
 char **global_argv;
 char PointCountChar[100];
 char MITLicense[] = "SNEK - Win32 Release version of SNEK\nCreated by Applehat (ApplehatDoesStuff) - Project is distributed under MIT License:\n\nCopyright 2024 ApplehatDoesStuff\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ,,Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED,,AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
 
 
 
-int CzytajKonfiguracje() {
-    FILE *file;
-    char line[100];
-    char param[20];
-    int value = 0;
-
-    file = fopen("config.ini", "r");
+void CzytajConfig(const char* filename) {
+    FILE* file = fopen(filename, "r");
     if (file == NULL) {
         printf("Nie mozna otworzyc pliku konfiguracyjnego.\n");
-        return 0; // lub domyślna wartość, jeżli plik nie istnieje
+        return;
     }
 
+    char line[256];
     while (fgets(line, sizeof(line), file)) {
-        if (sscanf(line, "%19s = %d", param, &value) == 2) {
-            if (strcmp(param, "show_xy") == 0) {
-                fclose(file);
-                return value;
-            }
+        if (strncmp(line, "SHOW_XY=", 8) == 0) {
+            show_xy = atoi(line + 8);
+        // dodaj zmiane rozdzielczości [TODO #2]
+        } else if (strncmp(line, "WIN_RES=", 8) == 0) {
+            win_res = atoi(line + 8);
         }
     }
 
     fclose(file);
-    return 0; // domyślna wartość, jeżli parametr show_xy nie został znaleziony
 }
 
 /** JEDZENIE **/
@@ -153,7 +148,7 @@ void RysujFragmentWeza(float x, float y){
     float pixelX = x * width;
     float pixelY = y * height;
 
-    glPointSize(7.0);  // Ustawienie rozmiaru punktu
+    glPointSizeSkalacja);  // Ustawienie rozmiaru punktu
     glBegin(GL_POINTS);
         glVertex2f(pixelX, pixelY);   // Rysowanie punktu na terenie ekranu
     glEnd();
@@ -161,7 +156,7 @@ void RysujFragmentWeza(float x, float y){
 
 void RysujJedzenie(){
     glColor3f(0.5f, 0.5f, 0.5f);
-    glPointSize(7.0);
+    glPointSize(Skalacja);
     glBegin(GL_POINTS);
         glVertex2f(FoodX * glutGet(GLUT_WINDOW_WIDTH), FoodY * glutGet(GLUT_WINDOW_HEIGHT));
     glEnd();
@@ -279,6 +274,26 @@ void Timer(int value) {
 
 /*** STREFA FUNKCJI GRAFICZNYCH - UWAZAJ ***/
 
+void UstawRozdzielczosc(int resolution, int* width, int* height) {
+    switch (resolution) {
+        case 3:
+            Skalacja = 11.5;
+            *width = 504;
+            *height = 288;
+            break;
+        case 2:
+            Skalacja = 7.0;
+            *width = 420;
+            *height = 240;
+        case 1:
+        default:
+            Skalacja = 7.0;
+            *width = 336;
+            *height = 192;
+            break;
+    }
+}
+
 void display() {
 
     glClearColor(153.0f/255.0f, 194.0f/255.0f, 2.0f/255.0f, 1.0f);
@@ -304,7 +319,7 @@ void display() {
 
     RysujJedzenie();
 
-    if (CzytajKonfiguracje() == 1) {
+    if (show_xy == 1) {
         // Wyświetlenie współrzędnych kropki
         glColor3f(0.0f, 0.0f, 0.0f);
         glRasterPos2f(DotX + 0.1, DotY); // Przesunięcie od kropki
@@ -327,7 +342,7 @@ void reshape(int w, int h) {
     gluOrtho2D(X_MIN, X_MAX, -2.0, 2.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glutReshapeWindow(336, 192);
+    //glutReshapeWindow(336, 192);
 }
 
 
@@ -338,7 +353,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     srand(time(NULL));  // inicjalizacja generatora liczb losowych
     glutInit(&__argc, __argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(336, 192);
+    CzytajConfig("config.ini");
+
+    int window_width, window_height;
+    UstawRozdzielczosc(win_res, &window_width, &window_height);    //na podstawie wartości win_res, zmień rozdzielczość
+    glutInitWindowSize(window_width, window_height);
     glutCreateWindow("SNEK - Snake II dla systemow Windows");
     //nazwa to nie ma jakiegoś znaczenia
 
@@ -363,10 +382,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     glutReshapeFunc(reshape);
     glutSpecialFunc(Kontrol);
 
-    HWND hwnd = FindWindow(NULL, "SNEK - Snake II dla systemow Windows");
+    /*HWND hwnd = FindWindow(NULL, "SNEK - Snake II dla systemow Windows");
     if (hwnd != NULL) {
         SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SIZEBOX);
-    }
+    }*/
 
     GenerateFood();
     glutTimerFunc(TIMER_SET, Timer, 0);
