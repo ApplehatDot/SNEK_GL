@@ -38,7 +38,7 @@
 #define DEFAULT_X 0.5
 #define DEFAULT_Y 0.5
 
-#define MAX_SEGMENTS 256
+#define MAX_SEGMENTS 777
 #define TIMER_SET 350 //[milisekund]
 #define limit 0.025
 
