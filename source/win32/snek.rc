@@ -21,12 +21,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "ApplehatDot Projects\0"
-            VALUE "FileDescription", "SNEK - Snake II OpenGL game"
+            VALUE "FileDescription", "SNEK - Snake for win32"
             VALUE "FileVersion", "1.0.0.0\0"
             VALUE "InternalName", "SNEK\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 under MIT License\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 ApplehatDoesStuff, under MIT License\0"
             VALUE "OriginalFilename", "SNEK.exe\0"
-            VALUE "ProductName", "SNEK OpenGL\0"
+            VALUE "ProductName", "SNEK_GL\0"
             VALUE "ProductVersion", "1.0.0.0\0"
         END
     END
