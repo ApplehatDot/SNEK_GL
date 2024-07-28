@@ -199,9 +199,9 @@ void Kontrol(int key, int x, int y) {
         case GLUT_KEY_F1:
             MessageBoxA(NULL, About ,"About SNEK", MB_OK);
             break;
-		case GLUT_KEY_F3:
-			MessageBoxA(NULL, "Game has been paused. Press OK or close this messagebox to continue", "Pause!", MB_OK);
-			break;
+	case GLUT_KEY_F3:
+            MessageBoxA(NULL, "Game has been paused. Press OK or close this messagebox to continue", "Pause!", MB_OK);
+            break;
 
     }
 }
