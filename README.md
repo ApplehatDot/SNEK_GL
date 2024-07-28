@@ -1,8 +1,4 @@
-# SNEK (main/original fork)
-<div align="center">
-  English docs (SNEK-english-docs fork) - <a href="https://github.com/ApplehatDot/SNEK/tree/SNEK-english-docs">Click here</a>
-  <p></p>
-</div>
+# SNEK
 
 SNEK - projekt w języku (czystego) C i OpenGL gry Snake II ze wzoru z Nokii 5110
 
