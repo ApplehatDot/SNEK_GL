@@ -23,7 +23,6 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <math.h>
-#include "debugwin.h"
 #include "resource.h"
 
 #define KROKX 0.0260
@@ -56,7 +55,6 @@ float KierunekY = 0.0;   // Początkowy kierunek ruchu w pionie
 float FoodX;    //bez jedzenia nigdy się nie odbędzie.
 float FoodY;
 float Skalacja = 7.0;
-bool debugMode = false;
 bool snakeMoved = false;
 char **global_argv;
 char PointCountChar[100];
@@ -369,26 +367,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_BIG, (LPARAM)hIcon);
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 
-     for (int i = 1; i < global_argc; ++i) {
-        if (strcmp(global_argv[i], "--debugwin") == 0) {
-            debugMode = true;
-            break;
-        }
-    }
-
-    if (debugMode) {
-        HINSTANCE hInstance = GetModuleHandle(NULL);
-        CreateDebugWindow(hInstance, SW_SHOW);
-    }
-
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutSpecialFunc(Kontrol);
-
-    /*HWND hwnd = FindWindow(NULL, "SNEK - Snake II dla systemow Windows");
-    if (hwnd != NULL) {
-        SetWindowLong(hwnd, GWL_STYLE, GetWindowLong(hwnd, GWL_STYLE) & ~WS_SIZEBOX);
-    }*/
 
     GenerateFood();
     glutTimerFunc(TIMER_SET, Timer, 0);
