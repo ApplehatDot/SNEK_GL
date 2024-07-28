@@ -12,10 +12,9 @@ windres snek.rc -O coff -o snek.res
 
 rem Mając pliki freeglut w C:\MinGW\freeglut\
 gcc -c -o s_core.o core.c -I"C:\MinGW\freeglut"
-gcc -c -o debugwin.o debugwin.c -I"C:\MinGW"
 
-rem linkowanie 3 plików *.object i *.res do jednego pliku *.EXE
-gcc -o SNEK.exe s_core.o debugwin.o snek.res -L"C:\MinGW\freeglut" -lfreeglut -lopengl32 -lglu32 -lgdi32 -luser32 -lwinmm -mwindows
+rem linkowanie 2 plików *.object i *.res do jednego pliku *.EXE
+gcc -o SNEK.exe s_core.o snek.res -L"C:\MinGW\freeglut" -lfreeglut -lopengl32 -lglu32 -lgdi32 -luser32 -lwinmm -mwindows
 SNEK.exe
 ```
 
