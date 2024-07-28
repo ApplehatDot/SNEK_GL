@@ -26,8 +26,8 @@
 #include "debugwin.h"
 #include "resource.h"
 
-#define KROKX 0.025
-#define KROKY 0.045
+#define KROKX 0.0260
+#define KROKY 0.0450
 
  /*czemu wartości kroku dla X i Y są osobne?
  kropka idąc na górę stykała się z innymi kropkami.*/
@@ -60,7 +60,7 @@ bool debugMode = false;
 bool snakeMoved = false;
 char **global_argv;
 char PointCountChar[100];
-char MITLicense[] = "SNEK - Win32 Release version of SNEK\nCreated by Applehat (ApplehatDoesStuff) - Project is distributed under MIT License:\n\nCopyright 2024 ApplehatDoesStuff\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ,,Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED,,AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
+char About[] = "SNEK - Win32 Release version of SNEK\nv1.0.0.0-insiders\n\nCreated by Applehat (ApplehatDoesStuff)\nSNEK_GL Project is distributed under MIT License.\n\nCopyright (C) 2024 ApplehatDoesStuff\n";
 
 
 
@@ -148,7 +148,7 @@ void RysujFragmentWeza(float x, float y){
     float pixelX = x * width;
     float pixelY = y * height;
 
-    glPointSizeSkalacja);  // Ustawienie rozmiaru punktu
+    glPointSize(Skalacja);  // Ustawienie rozmiaru punktu
     glBegin(GL_POINTS);
         glVertex2f(pixelX, pixelY);   // Rysowanie punktu na terenie ekranu
     glEnd();
@@ -199,8 +199,11 @@ void Kontrol(int key, int x, int y) {
             KierunekY = 0.0;
             break;
         case GLUT_KEY_F1:
-            MessageBoxA(NULL, MITLicense ,"o programie", MB_OK);
+            MessageBoxA(NULL, About ,"About SNEK", MB_OK);
             break;
+		case GLUT_KEY_F3:
+			MessageBoxA(NULL, "Game has been paused. Press OK or close this messagebox to continue", "Pause!", MB_OK);
+			break;
 
     }
 }
