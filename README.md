@@ -1,4 +1,4 @@
-# SNEK (SNEK-english-docs fork)
+# SNEK
 SNEK - OpenGL Game Project in C of Snake II from Nokia 5110
 
 Project has two distributions - Linux_x86 and Win32, that work the same.
