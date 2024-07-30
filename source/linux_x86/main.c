@@ -45,8 +45,8 @@
 
 int global_argc;
 char **global_argv;
-char PointCountChar[100];
-char buffer[90];
+wchar_t PointCountChar[100];
+wchar_t buffer[90];
 
 float SegmentWeza[MAX_SEGMENTS][2];
 float DotX = DEFAULT_X, DotY = DEFAULT_Y;
@@ -227,8 +227,8 @@ void Timer(int value) {
     float oldDotY = DotY;
     
     // dodaj ilość PointCount [TODO #1]
-    sprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
-    strcpy(PointCountChar, buffer);
+    swprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
+    wcscpy(PointCountChar, buffer);
 
     // Zapisz poprzednią pozycję głowy węża
     float prevX = DotX;
