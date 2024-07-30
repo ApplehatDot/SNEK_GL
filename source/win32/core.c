@@ -57,7 +57,7 @@ float FoodY;
 float Skalacja = 7.0;
 bool snakeMoved = false;
 char **global_argv;
-char PointCountChar[100];
+wchar_t PointCountChar[100];
 char About[] = "SNEK - Win32 Release version of SNEK\nv1.0.0.0-insiders\n\nCreated by Applehat (ApplehatDoesStuff)\nSNEK_GL Project is distributed under MIT License.\n\nCopyright (C) 2024 ApplehatDoesStuff\n";
 
 
@@ -197,10 +197,10 @@ void Kontrol(int key, int x, int y) {
             KierunekY = 0.0;
             break;
         case GLUT_KEY_F1:
-            MessageBoxA(NULL, About ,"About SNEK", MB_OK);
+            MessageBoxW(NULL, About ,"About SNEK", MB_OK);
             break;
 	case GLUT_KEY_F3:
-            MessageBoxA(NULL, "Game has been paused. Press OK or close this messagebox to continue", "Pause!", MB_OK);
+            MessageBoxW(NULL, "Game has been paused. Press OK or close this messagebox to continue", "Pause!", MB_OK);
             break;
 
     }
@@ -232,9 +232,9 @@ void Timer(int value) {
     float oldDotY = DotY;
 
     //Dodaj ilość PointCount [TODO - #3]
-    char buffer[100];    //bufor tymczasowy dla napisu
-    sprintf(buffer, "Detected Wall Collision! - You Lost!\nPoints scored: %d", PointCount);    //do buforu: komunikat i liczba
-    strcpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
+    wchar_t buffer[100];    //bufor tymczasowy dla napisu
+    swprintf(buffer, "Detected Wall Collision! - You Lost!\nPoints scored: %d", PointCount);    //do buforu: komunikat i liczba
+    wcscpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
     // Zapisz poprzednią pozycję głowy węża
     float prevX = DotX;
@@ -246,7 +246,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        MessageBoxA(NULL, PointCountChar, "Game Over", MB_OK);
+        MessageBoxW(NULL, PointCountChar, "Game Over", MB_OK);
         exit(0);
     }
 
