@@ -28,7 +28,7 @@
 
 
 ## Linux screenshots
-#### about running SNEK on linux distributions - reading <a href="https://github.com/ApplehatDot/SNEK/blob/main/docs/COMPILE.md#kompilacja-gierki-snek-dla-system%C3%B3w-rodziny-linux">docs/COMPILE.md</a> is recommended.a>
+#### about running SNEK on linux distributions - reading <a href="https://github.com/ApplehatDot/SNEK_GL/blob/main/docs/COMPILE.md#compiling-snek-for-linux">docs/COMPILE.md</a> is recommended.a>
 <div align="Center">
   
   Ubuntu 7.10 [x86] - Najstarsza dystrybucja Ubuntu która uruchamia SNEKa
