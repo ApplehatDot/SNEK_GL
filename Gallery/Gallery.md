@@ -1,4 +1,4 @@
-# Witaj w Galerii SNEK!
+# Welcome to SNEK gallery!
 ## Windows screenshots
 <div align="center">
   
@@ -28,14 +28,14 @@
 
 
 ## Linux screenshots
-#### co do uruchamiania SNEKa na systemach Linux - zalecam przeczytać <a href="https://github.com/ApplehatDot/SNEK/blob/main/docs/COMPILE.md#kompilacja-gierki-snek-dla-system%C3%B3w-rodziny-linux">docs/COMPILE.md</a>
+#### about running SNEK on linux distributions - reading <a href="https://github.com/ApplehatDot/SNEK/blob/main/docs/COMPILE.md#kompilacja-gierki-snek-dla-system%C3%B3w-rodziny-linux">docs/COMPILE.md</a> is recommended.a>
 <div align="Center">
   
   Ubuntu 7.10 [x86] - Najstarsza dystrybucja Ubuntu która uruchamia SNEKa
 
   <img width=600 src="images/ubuntu-7-10.png">
 
-  Ubuntu 11.04 [x86] - w tej wersji kompilowano pierwszy port linux
+  Ubuntu 11.04 [x86] - on that version the very first port was compiled
 
   <img width=600 src="images/ubuntu-11.04.png">
   
