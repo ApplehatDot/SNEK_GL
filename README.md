@@ -17,17 +17,18 @@ Win32 release works from Windows 98 to Windows 11, aswell on ReactOS (Windows XP
 - Windows NT 4.0 [missing `EnumDisplayMonitors` procedure in USER32.dll]
 - Windows 98
 - Windows 2000
-- ~Windows XP~ [opens up but hangs by itself and has graphical issues]
+- Windows XP [x86]
 - Windows 7 [x86 i x64] on that version the win32 was compiled in
 - Windows 8 [x86 i x64]
 - Windows 10 [x86 i x64]
 - Windows 11 [x64]
 - ReactOS 0.4.14 [x86?]
-<img src="source/images/reactOS.png">
 
 ## Linux_x86 (and Linux_x64...)
 - Ubuntu 7.10 [x86]
 - Ubuntu 11.04 [x86] on that version the Linux release was compiled in
+- Ubuntu 18.04 [x64] on real hardware
+- Lubuntu 18.04 [x64] on real hardware
 - Ubuntu 22.04.6 [x64] 
 
 Screenshot Gallery of each OS — <a href="https://github.com/ApplehatDot/SNEK/blob/main/Gallery%2FGallery.md">Gallery/Gallery.md</a>
