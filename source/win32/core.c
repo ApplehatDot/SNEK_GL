@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "resource.h"
+#include "translation_en-US.h"
 
 #define KROKX 0.0260
 #define KROKY 0.0450
@@ -48,6 +49,7 @@ int PointCount = 0;
 int LiczbaSegmentow = 1;
 int show_xy;
 int win_res;
+int window_width, window_height;
 float SegmentWeza[MAX_SEGMENTS][2];
 float DotX = DEFAULT_X, DotY = DEFAULT_Y;
 float KierunekX = KROKX; // Początkowy kierunek ruchu w poziomie
@@ -58,8 +60,6 @@ float Skalacja = 7.0;
 bool snakeMoved = false;
 char **global_argv;
 wchar_t PointCountChar[100];
-char About[] = "SNEK - Win32 Release version of SNEK\nv1.0.0.0-insiders\n\nCreated by Applehat (ApplehatDoesStuff)\nSNEK_GL Project is distributed under MIT License.\n\nCopyright (C) 2024 ApplehatDoesStuff\n";
-
 
 
 void CzytajConfig(const char* filename) {
@@ -163,9 +163,9 @@ void RysujJedzenie(){
 /** LOGIKA KOLIZJI WEZA**/
 bool KolizjaWeza(float x, float y){
     for (int i = 0; i < LiczbaSegmentow; i++) {
-        /*if (x == SegmentWeza[i][0] && y == SegmentWeza[i][1]) {
+        if (x == SegmentWeza[i][0] && y == SegmentWeza[i][1]) {
             return true;
-        }*/ if (DotX < 0.050 - KROKX || DotY < 0.050 - KROKY){
+        }else if (DotX < 0.050 - KROKX || DotY < 0.050 - KROKY){
             return true;
         } else if (DotX > 0.950 + KROKX || DotY > 0.950 + KROKY){
             return true;
@@ -197,10 +197,10 @@ void Kontrol(int key, int x, int y) {
             KierunekY = 0.0;
             break;
         case GLUT_KEY_F1:
-            MessageBoxW(NULL, About ,"About SNEK", MB_OK);
+            MessageBoxW(NULL, about_dialog_caption, about_dialog_title, MB_OK);
             break;
 	case GLUT_KEY_F3:
-            MessageBoxW(NULL, "Game has been paused. Press OK or close this messagebox to continue", "Pause!", MB_OK);
+            MessageBoxW(NULL, Pause_dialog_caption, Pause_dialog_title, MB_OK);
             break;
 
     }
@@ -233,7 +233,7 @@ void Timer(int value) {
 
     //Dodaj ilość PointCount [TODO - #3]
     wchar_t buffer[100];    //bufor tymczasowy dla napisu
-    swprintf(buffer, "Detected Wall Collision! - You Lost!\nPoints scored: %d", PointCount);    //do buforu: komunikat i liczba
+    swprintf(buffer, Points_scored_caption, PointCount);    //do buforu: komunikat i liczba
     wcscpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
     // Zapisz poprzednią pozycję głowy węża
@@ -246,7 +246,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        MessageBoxW(NULL, PointCountChar, "Game Over", MB_OK);
+        MessageBoxW(NULL, PointCountChar, Points_scored_title, MB_OK);
         exit(0);
     }
 
@@ -343,7 +343,8 @@ void reshape(int w, int h) {
     gluOrtho2D(X_MIN, X_MAX, -2.0, 2.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    //glutReshapeWindow(336, 192);
+    UstawRozdzielczosc(win_res, &window_width, &window_height);
+    glutReshapeWindow(window_width, window_height);
 }
 
 
@@ -356,10 +357,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     CzytajConfig("config.ini");
 
-    int window_width, window_height;
+    
     UstawRozdzielczosc(win_res, &window_width, &window_height);    //na podstawie wartości win_res, zmień rozdzielczość
     glutInitWindowSize(window_width, window_height);
-    glutCreateWindow("SNEK - Snake II dla systemow Windows");
+    glutCreateWindow("SNEK - Snake for Win32");
     //nazwa to nie ma jakiegoś znaczenia
 
     //ustaw ikone z pliku resource.h (DEF_ICON)
