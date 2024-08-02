@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "resource.h"
-#include "translation_en-US.h"
+#include "ReadPackets"
 
 #define KROKX 0.0260
 #define KROKY 0.0450
@@ -42,6 +42,7 @@
 #define MAX_SEGMENTS 777     // issue #2
 #define TIMER_SET 350
 #define limit 0.025
+#define NUM_ALLOWED_SECTIONS 6
 
 
 int global_argc;
@@ -61,6 +62,18 @@ bool snakeMoved = false;
 char **global_argv;
 wchar_t PointCountChar[100];
 
+TranslationConfig config;
+    
+	// Definiowanie dozwolonych sekcji - ReadPackets.h
+	// w razie dodawania nowych pakietów - dodaj tytuł TIPa tutaj :)
+const wchar_t *allowed_sections[NUM_ALLOWED_SECTIONS] = {
+	L"TRANSLATION_PL",
+	L"TRANSLATION_LT",
+	L"TRANSLATION_CZ",
+	L"TRANSLATION_FR",
+	L"TRANSLATION_US",
+	L"3cc6907f8f092ac1cbf61e021845c1cace53c85b"
+};
 
 void CzytajConfig(const char* filename) {
     FILE* file = fopen(filename, "r");
@@ -197,10 +210,12 @@ void Kontrol(int key, int x, int y) {
             KierunekY = 0.0;
             break;
         case GLUT_KEY_F1:
-            MessageBoxW(NULL, about_dialog_caption, about_dialog_title, MB_OK);
+            if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
+            	MessageBoxW(NULL, config.about_dialog_caption, config.about_dialog_title, MB_OK);
+	    }
             break;
 	case GLUT_KEY_F3:
-            MessageBoxW(NULL, Pause_dialog_caption, Pause_dialog_title, MB_OK);
+            MessageBoxW(NULL, config.pause_dialog_caption, config.pause_dialog_title, MB_OK);
             break;
 
     }
@@ -233,7 +248,7 @@ void Timer(int value) {
 
     //Dodaj ilość PointCount [TODO - #3]
     wchar_t buffer[100];    //bufor tymczasowy dla napisu
-    swprintf(buffer, Points_scored_caption, PointCount);    //do buforu: komunikat i liczba
+    swprintf(buffer, config.points_scored_caption, PointCount);    //do buforu: komunikat i liczba
     wcscpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
     // Zapisz poprzednią pozycję głowy węża
@@ -246,7 +261,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        MessageBoxW(NULL, PointCountChar, Points_scored_title, MB_OK);
+        MessageBoxW(NULL, PointCountChar, config.points_scored_title, MB_OK);
         exit(0);
     }
 
@@ -312,7 +327,6 @@ void display() {
 
     RysujBoczneLinie();
     RysujFragmentWeza(DotX, DotY);
-    //RysujJedzenie();
 
     for (int i = 1; i < LiczbaSegmentow; ++i) {
         RysujFragmentWeza(SegmentWeza[i][0], SegmentWeza[i][1]);
