@@ -215,7 +215,9 @@ void Kontrol(int key, int x, int y) {
 	    }
             break;
 	case GLUT_KEY_F3:
-            MessageBoxW(NULL, config.pause_dialog_caption, config.pause_dialog_title, MB_OK);
+            if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
+            	MessageBoxW(NULL, config.pause_dialog_caption, config.pause_dialog_title, MB_OK);
+	    }
             break;
 
     }
@@ -248,6 +250,7 @@ void Timer(int value) {
 
     //Dodaj ilość PointCount [TODO - #3]
     wchar_t buffer[100];    //bufor tymczasowy dla napisu
+    read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config);
     swprintf(buffer, config.points_scored_caption, PointCount);    //do buforu: komunikat i liczba
     wcscpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
