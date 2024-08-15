@@ -24,7 +24,7 @@
   
   <img width=600 src="images/Windows11.png">
 
-  Dell Latitude D410
+  Windowe XP — Dell Latitude D410
 
   <img width=600 src="images/Dell_d410-XP.jpg">
 </div>
