@@ -227,8 +227,8 @@ void Timer(int value) {
     float oldDotY = DotY;
     
     // dodaj ilość PointCount [TODO #1]
-    swprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
-    wcscpy(PointCountChar, buffer);
+    sprintf(buffer, "Detected wall collision - You Lost!\nPoint scored: %d", PointCount);
+    strcpy(PointCountChar, buffer);
 
     // Zapisz poprzednią pozycję głowy węża
     float prevX = DotX;
