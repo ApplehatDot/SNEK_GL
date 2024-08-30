@@ -3,7 +3,7 @@
   <img src="source/images/banner.png">
 </div>
 
-SNEK - OpenGL Game Project in C of Snake II from Nokia 5110
+SNEK - OpenGL Game Project in C of Snake II from Nokia 5110, basically a snake clone but with additional stuff.
 
 Project has two distributions - Linux_x86 and Win32, that work the same.
 Linux release works from ubuntu 7.10 [x86] to ubuntu 24.04 [x64]
