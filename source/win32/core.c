@@ -95,6 +95,14 @@ void CzytajConfig(const char* filename) {
     fclose(file);
 }
 
+void ShowPacketError(){
+	MessageBoxW(NULL,
+		L"Packet File does not exist or the Packet is invalid\n\n Download Packets at https://github.com/ApplehatDot/SNEK_GL/tree/main/source/win32/translation_packets", 
+		L"Error - No Packet", 
+		MB_ICONSTOP | MB_OK);
+	exit(1);	//zwróć błąd
+}
+
 /** JEDZENIE **/
 void GenerateFood() {
     // Zakres dla FoodX i FoodY
@@ -212,12 +220,12 @@ void Kontrol(int key, int x, int y) {
         case GLUT_KEY_F1:
             if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
             	MessageBoxW(NULL, config.about_dialog_caption, config.about_dialog_title, MB_OK);
-	    }
+	    } else if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
             break;
 	case GLUT_KEY_F3:
             if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
             	MessageBoxW(NULL, config.pause_dialog_caption, config.pause_dialog_title, MB_OK);
-	    }
+	    } else if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
             break;
 
     }
@@ -264,8 +272,11 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        MessageBoxW(NULL, PointCountChar, config.points_scored_title, MB_OK);
-        exit(0);
+        if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); } 
+	else {
+            MessageBoxW(NULL, PointCountChar, config.points_scored_title, MB_OK);
+            exit(0);
+	}
     }
 
     // Sprawdź kolizję z jedzeniem i dodaj nowy segment
@@ -384,6 +395,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(DEF_ICON));
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_BIG, (LPARAM)hIcon);
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
+
+    //Jeżeli pakiet nie istnieje, uruchom ShowPacketError.
+    if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
