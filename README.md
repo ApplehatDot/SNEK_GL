@@ -1,4 +1,3 @@
-# SNEK
 <div align=center>
   <img src="source/images/banner.png">
 </div>
