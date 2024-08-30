@@ -1,6 +1,6 @@
 # SNEK
 <div align=center>
-  <img src="source/images/banner.jpg">
+  <img src="source/images/banner.jpg" width=900>
 </div>
 
 SNEK - OpenGL Game Project in C of Snake II from Nokia 5110
