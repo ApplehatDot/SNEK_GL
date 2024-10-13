@@ -103,6 +103,31 @@ void ShowPacketError(){
 	exit(1);	//zwróć błąd
 }
 
+typedef void (*ShowAboutDialogFunc)(HINSTANCE, HWND);
+
+void ShowAboutDialog(){
+	// Załaduj bibliotekę DLL
+    HINSTANCE hLib = LoadLibraryW(L"AboutDialog.dll");
+    if (hLib == NULL) {
+        printf("Nie udało się załadować DLL!\n");
+        exit(1);
+    }
+
+    // Znajdź funkcję ShowAboutDialog
+    ShowAboutDialogFunc ShowAboutDialog = (ShowAboutDialogFunc)GetProcAddress(hLib, "ShowAboutDialog");
+    if (ShowAboutDialog == NULL) {
+        printf("Nie udało się znaleźć funkcji ShowAboutDialog!\n");
+        FreeLibrary(hLib);
+        exit(1);
+    }
+
+    // Wywołaj funkcję, aby pokazać okno dialogowe
+    ShowAboutDialog(GetModuleHandle(NULL), NULL);
+
+    // Zwolnij bibliotekę
+    FreeLibrary(hLib);
+}
+
 /** JEDZENIE **/
 void GenerateFood() {
     // Zakres dla FoodX i FoodY
