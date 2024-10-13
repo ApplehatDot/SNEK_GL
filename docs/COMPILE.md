@@ -11,6 +11,7 @@ what I do when compiling, is to create `make.bat` and there I add lines for comp
 
 windres snek.rc -O coff -o snek.res
 rem Having freeglut files at C:\MinGW\freeglut\
+g++ -shared -o AboutDialog.dll AboutDiag.c
 gcc -c -o s_core.o core.c -I"C:\MinGW\freeglut"
 gcc -c -o debugwin.o debugwin.c -I"C:\MinGW"
 
