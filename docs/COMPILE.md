@@ -11,12 +11,12 @@ what I do when compiling, is to create `make.bat` and there I add lines for comp
 
 windres snek.rc -O coff -o snek.res
 rem Having freeglut files at C:\MinGW\freeglut\
-g++ -shared -o AboutDialog.dll AboutDiag.c
+g++ -shared -o AboutDialog.dll AboutDiag.c -lgdi32
 gcc -c -o s_core.o core.c -I"C:\MinGW\freeglut"
-gcc -c -o debugwin.o debugwin.c -I"C:\MinGW"
+gcc -c -o obj/ReadPackets.o src/ReadPackets.c
 
 rem linking 3 object files to one executable
-gcc -o SNEK.exe s_core.o debugwin.o -L"C:\MinGW\freeglut" -lfreeglut -lopengl32 -lglu32 -lgdi32 -luser32 -lwinmm -mwindows
+gcc -o SNEK.exe s_core.o snek.res ReadPackets.o -L"C:\MinGW\freeglut" -lfreeglut -lopengl32 -lglu32 -lgdi32 -luser32 -lwinmm -mwindows
 SNEK.exe
 ```
 
