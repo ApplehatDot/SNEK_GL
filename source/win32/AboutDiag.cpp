@@ -1,4 +1,5 @@
 #include <windows.h>
+#include "resource.h"
 
 //definicje
 
@@ -8,13 +9,12 @@
 #define IDC_MYBUTTON 1
 
 HBITMAP hBanner;
-HWND Banner;
+HFONT hFont;
+HWND Banner, hText, hButton;
 
 extern "C" __declspec(dllexport) void ShowAboutDialog(HINSTANCE hInstance, HWND hwndParent);
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void AddControl(HWND);
-
-
 //koniec definicji
 
 extern "C" __declspec(dllexport) void ShowAboutDialog(HINSTANCE hInstance, HWND hwndParent){
@@ -42,8 +42,15 @@ extern "C" __declspec(dllexport) void ShowAboutDialog(HINSTANCE hInstance, HWND 
 		NULL);
 		
 	if (hwnd == NULL) {
-        return;
-    }
+        	return;
+    	}
+
+	// ustaw ikone
+	if (hwnd != NULL) {
+		HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
+		SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+		SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
+	}
 
     ShowWindow(hwnd, SW_SHOW);
 
@@ -79,12 +86,17 @@ void AddControl(HWND hwnd){
 	
 	SendMessageW(Banner, STM_SETIMAGE, IMAGE_BITMAP, (LPARAM) hBanner);
 	
-	CreateWindowW(
+	hText = CreateWindowW(
 		L"static", 
-		L"   About SNEK\n\n   Development enviroment\n   v1.0.0.2-dev (kopia programisty)\n\n   Stworzone przez Applehat (ApplehatDoesStuff)\n\n   SNEK_GL Project is distributed under MIT License.\n\n   Copyright (C) 2024 ApplehatDoesStuff\n",
+		L"   About SNEK\n\n   Win32 version of MEGC Project\n   v1.0.0.3-insiders\n\n   Created by Applehat (ApplehatDoesStuff)\n\n   SNEK_GL Project is distributed under MIT License.\n\n   Copyright (C) 2024 ApplehatDoesStuff\n",
 		WS_VISIBLE | WS_CHILD | SS_LEFT, 33, 110, 400, 180, hwnd, NULL, NULL, NULL);
+
+	// Pobierz systemowy font	
+	hFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+	
+	SendMessageW(hText, WM_SETFONT, (WPARAM)hFont, TRUE);
 		
-	CreateWindowExW(
+	hButton = CreateWindowExW(
                 0,                          // Dodatkowe style
                 L"BUTTON",                  // Klasa przycisku
                 L"OK",                       // Tekst przycisku 
@@ -95,5 +107,7 @@ void AddControl(HWND hwnd){
                 NULL, // Uchwyt instancji
                 NULL                        // Dodatkowe parametry
             );
+	
+	SendMessageW(hButton, WM_SETFONT, (WPARAM)hFont, TRUE);
 
 }
