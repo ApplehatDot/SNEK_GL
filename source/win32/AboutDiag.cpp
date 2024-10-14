@@ -88,7 +88,7 @@ void AddControl(HWND hwnd){
 	
 	hText = CreateWindowW(
 		L"static", 
-		L"   About SNEK\n\n   Win32 version of MEGC Project\n   v1.0.0.3-insiders\n\n   Created by Applehat (ApplehatDoesStuff)\n\n   SNEK_GL Project is distributed under MIT License.\n\n   Copyright (C) 2024 ApplehatDoesStuff\n",
+		L"			About SNEK\n\n   Win32 version of MEGC Project\n   v1.0.0.3-insiders\n\n   Created by Applehat (ApplehatDoesStuff)\n\n			Translations\n   applehat. - Polish and English (US)\n   tbifo_official - Czech\n   alokation - French\n   lemoncvm - Lithuanian\n\n   SNEK_GL Project is distributed under MIT License.\n\n   Copyright (C) 2024 ApplehatDoesStuff\n",
 		WS_VISIBLE | WS_CHILD | SS_LEFT, 33, 110, 400, 180, hwnd, NULL, NULL, NULL);
 
 	// Pobierz systemowy font	
