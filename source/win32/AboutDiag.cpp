@@ -5,12 +5,11 @@
 
 #define wWidth 500
 #define wHeight 390
-#define PACKET_SUCCESS 0
 #define IDC_MYBUTTON 1
 
 HBITMAP hBanner;
 HFONT hFont;
-HWND Banner, hText, hButton;
+HWND Banner, hText, hButton, hLicense;
 
 extern "C" __declspec(dllexport) void ShowAboutDialog(HINSTANCE hInstance, HWND hwndParent);
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -86,15 +85,39 @@ void AddControl(HWND hwnd){
 	
 	SendMessageW(Banner, STM_SETIMAGE, IMAGE_BITMAP, (LPARAM) hBanner);
 	
-	hText = CreateWindowW(
-		L"static", 
-		L"			About SNEK\n\n   Win32 version of MEGC Project\n   v1.0.0.3-insiders\n\n   Created by Applehat (ApplehatDoesStuff)\n\n			Translations\n   applehat. - Polish and English (US)\n   tbifo_official - Czech\n   alokation - French\n   lemoncvm - Lithuanian\n\n   SNEK_GL Project is distributed under MIT License.\n\n   Copyright (C) 2024 ApplehatDoesStuff\n",
-		WS_VISIBLE | WS_CHILD | SS_LEFT, 33, 110, 400, 180, hwnd, NULL, NULL, NULL);
+	hText = CreateWindowExW(
+		0,
+		L"EDIT", 
+		L"",
+		WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY,
+		40, 110, 
+		400, 80, 
+		hwnd, NULL, NULL, NULL);
+	
+	SetWindowTextW(
+		hText,
+		L"			About SNEK\r\n SNEK v1.0.0.3-insiders for win32\r\n Created by Applehat (Github = ApplehatDoesStuff)\r\n\r\n 	Packet Translations were provided by [discord usernames]:\r\n lemoncvm - Lithuanian\r\n tbifo_official - Czech\r\n alokation - French\r\n applehat. - Polish, English (US)\r\n\r\n SNEK_GL and its copies are distributed under MIT License (which its copy is shown under)"
+		);
+		
+	hLicense = CreateWindowExW(
+		0,
+		L"EDIT", 
+		L"",
+		WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY,
+		40, 210, 
+		400, 80, 
+		hwnd, NULL, NULL, NULL);
+		
+	SetWindowTextW(
+		hLicense,
+		L"			MIT License\r\n\r\n Copyright (c) 2024 ApplehatDoesStuff\r\n Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ''Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\n The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\r\n\r\n THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+		);
 
 	// Pobierz systemowy font	
 	hFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
 	
 	SendMessageW(hText, WM_SETFONT, (WPARAM)hFont, TRUE);
+	SendMessageW(hLicense, WM_SETFONT, (WPARAM)hFont, TRUE);
 		
 	hButton = CreateWindowExW(
                 0,                          // Dodatkowe style
