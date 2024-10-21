@@ -8,12 +8,14 @@ To compile the project yourself, read <a href="https://github.com/ApplehatDot/SN
 
 SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 
-|Minimal Requirements:|
+|Minimal Requirements¹:|
 |-------------|
 |**Processor:** Intel i486 *or better*|
 |**RAM:** 8 MB (16 MB recommended) *or higher*|
 |**Graphics:** supporting OpenGL 1.1+ in 2D *or better*|
 |**OS:** Windows 95+ |
+
+
 
 <img src="source/images/Windows 11.png">
 
@@ -33,6 +35,9 @@ SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 |   ReactOS 0.4.14 |      x86     |      :x:      |:white_check_mark:| :white_check_mark:|
 |Ubuntu [with Wine]|     x64     |:white_check_mark:|:white_check_mark:| :white_check_mark:|
 | Microsoft Whistler 2419 | x86 | :white_check_mark: | :x: | :white_check_mark:|
+
+——
+*1. Requirements may be incorrect. Let me know if it needs to be edited.*
 
 Screenshot Gallery of each OS — <a href="https://github.com/ApplehatDot/SNEK/blob/main/Gallery%2FGallery.md">Gallery/Gallery.md</a>
 
