@@ -15,7 +15,7 @@ SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 |**Graphics:** supporting OpenGL 1.1+ in 2D *or better*|
 |**OS:** Windows 95+ |
 
-<img src="source/images/readme-1.png">
+<img src="source/images/Windows 11.png">
 
 # compatibility list of different Versions for:
 
