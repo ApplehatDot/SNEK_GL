@@ -1,5 +1,4 @@
 # Welcome to SNEK gallery!
-## Windows screenshots
 <div align="center">
   
   Windows XP on Dell Latitude D410
