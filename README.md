@@ -36,7 +36,7 @@ SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 |Ubuntu [with Wine]|     x64     |:white_check_mark:|:white_check_mark:| :white_check_mark:|
 | Microsoft Whistler 2419 | x86 | :white_check_mark: | :x: | :white_check_mark:|
 
-——
+
 *1. Requirements may be incorrect. Let me know if it needs to be edited.*
 
 Screenshot Gallery of each OS — <a href="https://github.com/ApplehatDot/SNEK/blob/main/Gallery%2FGallery.md">Gallery/Gallery.md</a>
