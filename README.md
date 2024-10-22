@@ -8,15 +8,17 @@ To compile the project yourself, read <a href="https://github.com/ApplehatDot/SN
 
 SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 
-|Minimal Requirements¹:|
+|Minimal Requirements:|
 |-------------|
-|**Processor:** Intel Pentium Pro (i686) *or better*|
-|**RAM:** 8 MB (16 MB recommended) *or higher*|
+|**Processor:** Intel Pentium ??? *or better*|
+|**RAM:** SNEK uses 9-12Kb¹; *OS dependent²*|
 |**Graphics:** supporting OpenGL 1.1+ in 2D *or better*|
-|**OS:** Windows 95+ |
+|**OS:** ??? |
 
 
-*1. Requirements may be incorrect. Let me know if it needs to be edited.*
+*1. Estimated Usage, may be incorrect.*
+
+*2. every OS uses RAM and has already a requirement of how many you need it.*
 
 <img src="source/images/Windows 11.png">
 
@@ -26,7 +28,7 @@ SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 | Operating System | Architecture | Real Hardware | VM | Works? | 
 | ---------------- |--------------| ------------- | -- | ------ |
 |    Windows 95    |      x86     |       :x:      | :x: | ❔ |
-|    Windows 98    |      x86     |      :x:      |:white_check_mark:|:white_check_mark:|
+|    Windows 98³    |      x86     |      :x:      |:white_check_mark:|:white_check_mark:|
 |  Windows NT 4.0  |      x86     |      :x:     |:white_check_mark:| :x: |
 | Windows 2000 SP4 |      x86     |:white_check_mark:|:white_check_mark:| :white_check_mark: |
 |   Windows XP SP3 |      x86     |:white_check_mark:|:white_check_mark:| :white_check_mark: |
@@ -36,6 +38,8 @@ SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 |   ReactOS 0.4.14 |      x86     |      :x:      |:white_check_mark:| :white_check_mark:|
 |Ubuntu [with Wine]|     x64     |:white_check_mark:|:white_check_mark:| :white_check_mark:|
 | Microsoft Whistler 2419 | x86 | :white_check_mark: | :x: | :white_check_mark:|
+
+*3. Windows 98 was tested back when SNEK v1.0.0.1 was released. Due to Packet reading not working in Windows 98, versions above v1.0.0.2 and higher won't be compatible with it*
 
 
 
