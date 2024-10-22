@@ -24,7 +24,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "resource.h"
-#include "ReadPackets"
+#include "ReadPackets.h
+"
 
 #define KROKX 0.0260
 #define KROKY 0.0450
@@ -243,9 +244,7 @@ void Kontrol(int key, int x, int y) {
             KierunekY = 0.0;
             break;
         case GLUT_KEY_F1:
-            if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
-            	MessageBoxW(NULL, config.about_dialog_caption, config.about_dialog_title, MB_OK);
-	    } else if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
+            ShowAboutDialog();
             break;
 	case GLUT_KEY_F3:
             if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
