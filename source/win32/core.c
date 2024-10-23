@@ -24,8 +24,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "resource.h"
-#include "ReadPackets.h
-"
+#include "ReadPackets.h"
 
 #define KROKX 0.0260
 #define KROKY 0.0450
