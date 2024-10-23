@@ -30,6 +30,7 @@ SNEK works from Windows 98 to Windows 11, aswell on ReactOS and Whistler 2419
 |    Windows 95    |      x86     |       :x:      | :x: | ❔ |
 |    Windows 98³    |      x86     |      :x:      |:white_check_mark:|:white_check_mark:|
 |  Windows NT 4.0  |      x86     |      :x:     |:white_check_mark:| :x: |
+| Windows 2000 RTM |      x86     |:x:|:white_check_mark:| :white_check_mark: |
 | Windows 2000 SP4 |      x86     |:white_check_mark:|:white_check_mark:| :white_check_mark: |
 |   Windows XP SP3 |      x86     |:white_check_mark:|:white_check_mark:| :white_check_mark: |
 |   Windows 7 SP1  |   x86 & x64  |:white_check_mark:|:white_check_mark:| :white_check_mark:|
