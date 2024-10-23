@@ -17,6 +17,10 @@
   
   <img width=600 src="images/Ubuntu.png">
 
+  Windows 2000 RTM - emulated with PCem; 
+  *Pentium II 233, 64 MB and Voodoo 3 3000 GPU*
+
+  <img width=600 src="images/Windows 2000 RTM.png">
 
 </div>
 
