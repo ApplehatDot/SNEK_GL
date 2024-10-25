@@ -1,0 +1,4 @@
+#include "AboutDiag.h"
+
+IDI_ICON1 ICON "assets\\Game-Icon.ico"
+IDB_BANNER BITMAP "assets\\hBanner.bmp"
