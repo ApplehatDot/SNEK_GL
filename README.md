@@ -33,7 +33,7 @@ SNEK works from Windows ~98~ 2000 RTM to Windows 11, aswell on ReactOS and Whist
 |   Windows 10     |   x86 & x64  |:white_check_mark:|:white_check_mark:| :white_check_mark:|
 |   Windows 11     |      x64     |:white_check_mark:|:x:| :white_check_mark:|
 |   ReactOS 0.4.14 |      x86     |      :x:      |:white_check_mark:| :white_check_mark:|
-|Ubuntu [with Wine]|     x64     |:white_check_mark:|:white_check_mark:| :white_check_mark:|
+|Ubuntu [with Wine]|   x86 & x64  |:white_check_mark:|:white_check_mark:| :white_check_mark:|
 | Microsoft Whistler 2419 | x86 | :white_check_mark: | :x: | :white_check_mark:|
 
 *3. Windows 98 was tested back when SNEK v1.0.0.1 was released. Due to Packet reading not working in Windows 98, versions above v1.0.0.2 and higher won't be compatible with it - Current Result shows testing the latest version*
