@@ -1,2 +1,0 @@
-[V] make a legacy version
-[-] Test on hardware
