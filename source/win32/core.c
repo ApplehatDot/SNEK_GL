@@ -62,6 +62,9 @@ bool snakeMoved = false;
 char **global_argv;
 wchar_t PointCountChar[100];
 
+// --Window variables
+const wchar_t PacketFileName[] = L"current_packet.ini";
+
 TranslationConfig config;
     
 	// Definiowanie dozwolonych sekcji - ReadPackets.h
@@ -246,9 +249,9 @@ void Kontrol(int key, int x, int y) {
             ShowAboutDialog();
             break;
 	case GLUT_KEY_F3:
-            if(read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
+            if(read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
             	MessageBoxW(NULL, config.pause_dialog_caption, config.pause_dialog_title, MB_OK);
-	    } else if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
+	    } else if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
             break;
 
     }
@@ -281,7 +284,7 @@ void Timer(int value) {
 
     //Dodaj ilość PointCount [TODO - #3]
     wchar_t buffer[100];    //bufor tymczasowy dla napisu
-    read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config);
+    read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config);
     swprintf(buffer, config.points_scored_caption, PointCount);    //do buforu: komunikat i liczba
     wcscpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
@@ -295,7 +298,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); } 
+        if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); } 
 	else {
             MessageBoxW(NULL, PointCountChar, config.points_scored_title, MB_OK);
             exit(0);
@@ -415,12 +418,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     //nazwa to nie ma jakiegoś znaczenia
 
     //ustaw ikone z pliku resource.h (DEF_ICON)
-    HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(DEF_ICON));
+    HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1));
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_BIG, (LPARAM)hIcon);
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 
     //Jeżeli pakiet nie istnieje, uruchom ShowPacketError.
-    if (read_ini_file(L"current_packet.ini", allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
+    if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
