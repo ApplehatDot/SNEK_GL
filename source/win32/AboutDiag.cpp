@@ -10,6 +10,7 @@
 HBITMAP hBanner;
 HFONT hFont;
 HWND Banner, hText, hButton, hLicense;
+LPCWSTR ImagePath = L"assets\\hBanner\\Banner.bmp";
 
 extern "C" __declspec(dllexport) void ShowAboutDialog(HINSTANCE hInstance, HWND hwndParent);
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -77,7 +78,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 void AddControl(HWND hwnd){
 	Banner = CreateWindowW(L"Static", NULL, WS_VISIBLE | WS_CHILD | SS_BITMAP, 0, 0, 0, 0, hwnd, NULL, NULL, NULL);
 	
-	hBanner = (HBITMAP)LoadImageW(NULL, L"assets\\hBanner\\Banner.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+	hBanner = (HBITMAP)LoadImageW(NULL, ImagePath, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 	if(hBanner == NULL){
 		MessageBoxW(hwnd, L"bitmap missing error [extension - hBanner == NULL]", L"error loading bitmap", MB_OK | MB_ICONERROR);
 		return;
