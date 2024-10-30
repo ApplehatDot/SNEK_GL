@@ -1,6 +1,6 @@
 #include "resource.h"
 
-IDI_ICON1 ICON "src\\Game004.ico"
+IDI_ICON1 ICON "src\\Game-Icon.ico"
 
 // Informacje o wersji pliku
 1 VERSIONINFO
