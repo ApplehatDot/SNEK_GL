@@ -29,7 +29,7 @@ SNEK works from Windows ~98~ 2000 RTM to Windows 11, aswell on ReactOS and Whist
 | Windows 2000 SP4 |      x86     |:white_check_mark:|:white_check_mark:| :white_check_mark: |
 |   Windows XP SP3 |      x86     |:white_check_mark:|:white_check_mark:| :white_check_mark: |
 |   Windows 7 SP1  |   x86 & x64  |:white_check_mark:|:white_check_mark:| :white_check_mark:|
-|   Windows 8 [.1] |      x86     |       :x:      |:white_check_mark:| :white_check_mark:|
+|   Windows 8 [.1] |      x86     |:white_check_mark: |:white_check_mark:| :white_check_mark:|
 |   Windows 10     |   x86 & x64  |:white_check_mark:|:white_check_mark:| :white_check_mark:|
 |   Windows 11     |      x64     |:white_check_mark:|:x:| :white_check_mark:|
 |   ReactOS 0.4.14 |      x86     |      :x:      |:white_check_mark:| :white_check_mark:|
