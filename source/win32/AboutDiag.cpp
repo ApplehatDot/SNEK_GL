@@ -75,6 +75,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 		case WM_COMMAND:
 			//if MessageBox returns IDOK, close the AboutDialog.
 			if(wParam == IDOK){	DestroyWindow(hwnd);	}
+			break;
 	}
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 };
