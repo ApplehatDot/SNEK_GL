@@ -65,7 +65,7 @@ wchar_t PointCountChar[100];
 // --Window variables
 const wchar_t PacketFileName[] = L"current_packet.ini";
 
-TranslationConfig config;
+TranslationConfig Packet;
     
 	// Definiowanie dozwolonych sekcji - ReadPackets.h
 	// w razie dodawania nowych pakietów - dodaj tytuł TIPa tutaj :)
@@ -249,8 +249,8 @@ void Kontrol(int key, int x, int y) {
             ShowAboutDialog();
             break;
 	case GLUT_KEY_F3:
-            if(read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) == 0){
-            	MessageBoxW(NULL, config.pause_dialog_caption, config.pause_dialog_title, MB_OK);
+            if(read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet) == 0){
+            	MessageBoxW(NULL, Packet.pause_dialog_caption, Packet.pause_dialog_title, MB_OK);
 	    } else if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
             break;
 
