@@ -352,6 +352,9 @@ void UstawRozdzielczosc(int resolution, int* width, int* height) {
 
 void display() {
 
+    // to use the blue background use this:
+    // glClearColor(40.0f/255.0f, 94.0f/255.0f, 130.f/255.0f, 1.0f);
+
     glClearColor(153.0f/255.0f, 194.0f/255.0f, 2.0f/255.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
