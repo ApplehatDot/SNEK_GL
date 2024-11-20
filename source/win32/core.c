@@ -251,7 +251,7 @@ void Kontrol(int key, int x, int y) {
 	case GLUT_KEY_F3:
             if(read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet) == 0){
             	MessageBoxW(NULL, Packet.pause_dialog_caption, Packet.pause_dialog_title, MB_OK);
-	    } else if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
+	    } else if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet) != 0) { ShowPacketError(); }
             break;
 
     }
@@ -284,8 +284,8 @@ void Timer(int value) {
 
     //Dodaj ilość PointCount [TODO - #3]
     wchar_t buffer[100];    //bufor tymczasowy dla napisu
-    read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config);
-    swprintf(buffer, config.points_scored_caption, PointCount);    //do buforu: komunikat i liczba
+    read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet);
+    swprintf(buffer, Packet.points_scored_caption, PointCount);    //do buforu: komunikat i liczba
     wcscpy(PointCountChar, buffer);    //kopiuje to co z buforu na PointCountChar
     
     // Zapisz poprzednią pozycję głowy węża
@@ -298,7 +298,7 @@ void Timer(int value) {
 
     // Sprawdź kolizję z wężem
     if (KolizjaWeza(DotX, DotY)) {
-        if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); } 
+        if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet) != 0) { ShowPacketError(); } 
 	else {
             MessageBoxW(NULL, PointCountChar, config.points_scored_title, MB_OK);
             exit(0);
@@ -426,7 +426,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     SendMessage(GetActiveWindow(), WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
 
     //Jeżeli pakiet nie istnieje, uruchom ShowPacketError.
-    if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &config) != 0) { ShowPacketError(); }
+    if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet) != 0) { ShowPacketError(); }
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
