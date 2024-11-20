@@ -300,7 +300,7 @@ void Timer(int value) {
     if (KolizjaWeza(DotX, DotY)) {
         if (read_ini_file(PacketFileName, allowed_sections, NUM_ALLOWED_SECTIONS, &Packet) != 0) { ShowPacketError(); } 
 	else {
-            MessageBoxW(NULL, PointCountChar, config.points_scored_title, MB_OK);
+            MessageBoxW(NULL, PointCountChar, Packet.points_scored_title, MB_OK);
             exit(0);
 	}
     }
