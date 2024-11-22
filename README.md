@@ -10,10 +10,10 @@ SNEK works from Windows 2000 RTM to Windows 11, aswell on ReactOS and Whistler 2
 
 |Minimal Requirements:|
 |-------------|
-|**Processor:** Intel Pentium II 233; Celeron 233 *or better*|
-|**RAM:** 64 MB (128 MB recommended) *or more*|
-|**Graphics:** Voodoo 3 3000 or any card compatible with OpenGL 1.1+ in 2D *or better*|
-|**OS:** Windows 2000 RTM *or newer* |
+|**Processor:** Intel Pentium Pro 180; Celeron 233 *or better*|
+|**RAM:** 16 MB (32 MB recommended) *or more*|
+|**Graphics:** any card compatible with OpenGL 1.1+ in 2D *or better*|
+|**OS:** Windows NT 4.0 *or newer* |
 
 <img src="source/images/Windows 11.png">
 
