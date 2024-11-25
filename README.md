@@ -6,7 +6,7 @@ SNEK - OpenGL and WinAPI Game Project in *C and C++* of Snake II from Nokia 5110
 
 To compile the project yourself, read <a href="https://github.com/ApplehatDot/SNEK/blob/main/docs%2FCOMPILE.md">COMPILE.md</a>
 
-SNEK works from Windows 2000 RTM to Windows 11, aswell on ReactOS and Whistler 2419; on both architectures - x86, x86-64
+SNEK works from Windows NT 4.0 to Windows 11, aswell on ReactOS and Whistler 2419; on both architectures - x86, x86-64
 
 |Minimal Requirements:|
 |-------------|
