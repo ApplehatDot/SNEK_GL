@@ -15,6 +15,8 @@ To compile the project yourself, read and follow <a href="https://github.com/App
 |**Graphics:** supporting OpenGL 1.1+ in 2D *or better*|
 |**OS:** Windows NT 4.0 *or newer* |
 
+_unsure if your OS will work with SNEK? see the [compatibility list](https://github.com/ApplehatDot/SNEK_GL/blob/main/docs/SNEKCL.md)_
+
 # Contributors
 _any contributor is reffered by their discord username_
 ### _translations_
@@ -24,7 +26,7 @@ _any contributor is reffered by their discord username_
 **applehat.** for Polish and English (US) Translations `[translation_pl-PL.ini; translation_en-US.ini]`<br>
 
 # License
-This Project (SNEK_GL; SNEK) is distributed under **MIT License**
+This MEGC Project (SNEK_GL; SNEK) is distributed under **MIT License**
 
 Screenshot Gallery of each OS — <a href="https://github.com/ApplehatDot/SNEK/blob/main/Gallery%2FGallery.md">Gallery/Gallery.md</a>
 
