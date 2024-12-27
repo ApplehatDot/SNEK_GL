@@ -15,6 +15,14 @@ To compile the project yourself, read and follow <a href="https://github.com/App
 |**Graphics:** supporting OpenGL 1.1+ in 2D *or better*|
 |**OS:** Windows NT 4.0 *or newer* |
 
+# Contributors
+_any contributor is reffered by their discord username_
+### _translations_
+**lemoncvm** for Lithuanian Translation `[translation_lt.ini]`<br>
+**tbifo_official** for Czech Translation `[translation_cz.ini]`<br>
+**alokation** for French Translation `[translation_fr.ini]`<br>
+**applehat.** for Polish and English (US) Translations `[translation_pl-PL.ini; translation_en-US.ini]`<br>
+
 # License
 This Project (SNEK_GL; SNEK) is distributed under **MIT License**
 
