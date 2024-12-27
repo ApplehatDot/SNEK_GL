@@ -19,18 +19,18 @@ jobs:
     - name: Set up MinGW
       uses: egor-tensin/setup-mingw@v1
       with:
-        arch: x86
+        platform: x86_64
 
     - name: Add MinGW to PATH
-      run: echo "C:\\mingw32\\bin" >> $GITHUB_PATH
+      run: echo "C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\bin" >> $GITHUB_PATH
 
     - name: Install FreeGLUT
       run: |
         curl -LO https://downloads.sourceforge.net/project/freeglut/freeglut/2.6.0/freeglut-MSVC-2.6.0-3.mp.zip
         7z x freeglut-MSVC-2.6.0-3.mp.zip -ofreeglut
-        xcopy freeglut\\freeglut\\bin\\x86\\*.dll C:\\mingw32\\bin
-        xcopy freeglut\\freeglut\\lib\\x86\\*.lib C:\\mingw32\\lib
-        xcopy freeglut\\freeglut\\include\\GL C:\\mingw32\\include\\GL /E /I /Y
+        xcopy freeglut\\freeglut\\bin\\x86\\*.dll C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\bin
+        xcopy freeglut\\freeglut\\lib\\x86\\*.lib C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\lib
+        xcopy freeglut\\freeglut\\include\\GL C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\include\\GL /E /I /Y
 
     - name: Build project with Makefile
       run: mingw32-make
