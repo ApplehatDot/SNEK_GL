@@ -32,6 +32,13 @@ jobs:
         xcopy freeglut\\freeglut\\lib\\x86\\*.lib C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\lib
         xcopy freeglut\\freeglut\\include\\GL C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\include\\GL /E /I /Y
 
+    - name: Remove unnecessary files
+      run: |
+        $filePath = "C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw32\\i686-w64-mingw32\\lib\\libpthread.dll.a"
+        if (Test-Path $filePath) {
+          Remove-Item $filePath
+        }
+
     - name: Build project with Makefile
       run: mingw32-make
 
