@@ -18,18 +18,18 @@ void AddControl(HWND);
 //koniec definicji
 
 extern "C" __declspec(dllexport) void ShowAboutDialog(HINSTANCE hInstance, HWND hwndParent){
-	const wchar_t CLASS_NAME[] = L"WndAboutDialog";
+	const char CLASS_NAME[] = L"WndAboutDialog";
 	
-	WNDCLASSW wc = {0};
+	WNDCLASS wc = {0};
 	wc.lpfnWndProc = WindowProc;
 	wc.hInstance = hInstance;
 	wc.lpszClassName = CLASS_NAME;
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 	
-	RegisterClassW(&wc);
+	RegisterClass(&wc);
 	
-	HWND hwnd = CreateWindowExW(
+	HWND hwnd = CreateWindowEx(
 		0,
 		CLASS_NAME,
 		L"About",
