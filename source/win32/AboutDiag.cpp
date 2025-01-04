@@ -102,7 +102,7 @@ void AddControl(HWND hwnd){
 	
 	SetWindowTextW(
 		hText,
-		L"			About SNEK\r\n SNEK v1.0.0.3-insiders for win32\r\n Created by Applehat (Github = ApplehatDoesStuff)\r\n\r\n 	Packet Translations were provided by [discord usernames]:\r\n lemoncvm - Lithuanian\r\n tbifo_official - Czech\r\n alokation - French\r\n applehat. - Polish, English (US)\r\n\r\n SNEK_GL and its copies are distributed under MIT License (which its copy is shown under)"
+		L"			About SNEK\r\n SNEK v1.0.0.5-insiders for win32\r\n Created by Applehat (Github = ApplehatDoesStuff)\r\n\r\n 	Packet Translations were provided by [discord usernames]:\r\n lemoncvm - Lithuanian\r\n tbifo_official - Czech\r\n alokation - French\r\n applehat. - Polish, English (US)\r\n\r\n SNEK_GL and its copies are distributed under MIT License (which its copy is shown under)"
 		);
 		
 	hLicense = CreateWindowExW(
@@ -116,7 +116,7 @@ void AddControl(HWND hwnd){
 		
 	SetWindowTextW(
 		hLicense,
-		L"			MIT License\r\n\r\n Copyright (c) 2024 ApplehatDoesStuff\r\n Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ''Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\n The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\r\n\r\n THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+		L"			MIT License\r\n\r\n Copyright (c) 2025 ApplehatDoesStuff\r\n Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ''Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\n The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\r\n\r\n THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
 		);
 
 	// Pobierz systemowy font	
