@@ -63,7 +63,7 @@ char **global_argv;
 wchar_t PointCountChar[100];
 
 // --Window variables
-const wchar_t PacketFileName[] = L"current_packet.ini";
+const wchar_t PacketFileName[] = L"used_packet.pkt";
 
 TranslationConfig Packet;
     
